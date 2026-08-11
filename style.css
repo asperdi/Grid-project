@@ -20,7 +20,7 @@ body{
     grid-row: 1 / span 2;
     color:#fff;
 
-    padding: 10px;
+    padding: 1rem;
     font-size: 1.3rem;
     display: grid;
     grid-auto-rows: min-content;
@@ -28,16 +28,27 @@ body{
     justify-content: center;
 }
 
-h1{
-    font-size: 2rem;
+
+.side_bar p, .dashboard{
+  margin-bottom: 5px;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+  justify-content: start;
 }
 
-.side_bar ul{
-    list-style: none;
+.side_bar img{
+    width:25px;
+    height: inherit;
+    filter:invert(100%) ;
 }
 
-.side_bar li{
-    margin-bottom: 10px;
+.dashboard{
+    font-size: 2.2rem;
+}
+
+.dashboard img{
+    width: 45px;
 }
 
 .nav{
