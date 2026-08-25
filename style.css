@@ -1,5 +1,13 @@
 :root{
     --white: #fff;
+    --light_blue: #1992d4;
+    --gray_background: #e2e8f0;
+    --input_focus_color: rgb(226, 231, 235);
+    --input_outline: #d8d8d8;
+    --p_background: #656363;
+    --announcement_border: #a4a4a4;
+    --first_paragraph: #000;
+    --border_left: #f0b429;
 }
 
 *{
@@ -20,7 +28,7 @@ body{
 }
 
 .side_bar{
-    background-color: #1992d4;
+    background-color: var(--light_blue);
     grid-row: 1 / span 2;
     color:var(--white);
 
@@ -41,7 +49,7 @@ body{
   justify-content: start;
 }
 
-.side_bar img, .nav img{
+.side_bar img, .nav img, .main_content img{
     width:25px;
     height: inherit;
 }
@@ -80,15 +88,15 @@ body{
     font-size: 100%;
     width: 40vw;
     margin-right: 15vw;
-    background-color: #e2e8f0;
+    background-color: var(--gray_background);
     border: none;
     border-radius: 10px;
     height: 40%;
 }
 
 .nav_top input:focus{
-    outline: 1px solid #d8d8d8;
-    background-color: rgb(226, 231, 235);
+    outline: 1px solid var(--input_outline);
+    background-color: var(--input_focus_color);
     padding-left: 0.5rem;
 }
 
@@ -137,8 +145,8 @@ body{
 }
 
 .buttons button{
-    background-color: #1992d4;
-    color:#fff;
+    background-color: var(--light_blue);
+    color:var(--white);
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
     border: none;
@@ -146,15 +154,16 @@ body{
 }
 
 .main_content{
-    background-color: #e2e8f0;
+    background-color: var(--gray_background);
     padding: 2rem 1rem;
 
     display: grid;
     grid-template-columns: 2fr 1fr;
+    gap: 1rem;
 }
 
 .main_content p{
-    color:#656363;
+    color:var(--p_background);
 }
 
 .projects{
@@ -163,16 +172,19 @@ body{
 
 h2{
     font-size: 1.3rem;
+    margin-bottom: 1rem;
 }
 
-.announcements, .trending{
+.projects, .announcements, .trending{
     margin-right: 1rem;
 }
 
-.announcements_box, .trending_box{
+.project, .announcements_box, .trending_box{
     background-color: var(--white);
     border-radius: 10px;
+}
 
+.announcements_box, .trending_box{
     margin: 1rem 0;
     padding: 1rem 2rem;
 }
@@ -182,7 +194,7 @@ h2{
 }
 
 .announcements_box .announcement:not(.announcements_box .announcement:last-child){
-    border-bottom: 1px solid #a4a4a4;
+    border-bottom: 1px solid var(--announcement_border);
 }
 
 .announcements_box h4{
@@ -195,7 +207,7 @@ h2{
     align-items: center;
 }
 
-.user{
+.user:not(.user:last-child){
     margin-bottom: 1rem;
 }
 
@@ -219,5 +231,36 @@ h2{
 
 .description p:first-child{
     font-weight: bold;
-    color:#000;
+    color:var(--first_paragraph);
+}
+
+.project_boxes{
+    display: grid;
+    height: calc(100% - 3.5rem);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.project{
+    display: grid;
+    padding: 1rem 2rem;
+    border-left: 8px solid var(--border_left);
+}
+
+.project h3{
+    margin-bottom: 0.5rem;
+}
+
+.project .description{
+    justify-self: start;
+    align-self:center;
+}
+
+.icons{
+    justify-self: end;
+    align-self: center;
+}
+
+.icons > *{
+    margin-right: 0.8rem;
 }
